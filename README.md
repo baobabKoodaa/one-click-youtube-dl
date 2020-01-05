@@ -2,17 +2,19 @@ This is a small tool that provides a "one click download" functionality to youtu
 
 **Prerequisites:**
 
-1. Java: Download Java JDK, add it to environment path variable
-2. ffmpeg: Download ffmpeg Windows build, add it to environment path variable
+1. Java: Download [Java JDK](https://jdk.java.net/), add it to environment path variable
+2. ffmpeg: Download [ffmpeg Windows build](https://www.ffmpeg.org/download.html#build-windows),
+add it to environment path variable
 
 **Installation:**
 
-1. Download youtube-dl Windows executable
+1. Download [youtube-dl Windows executable](https://ytdl-org.github.io/youtube-dl/download.html)
 2. Test that you are able to download high-quality videos from youtube on command line
 (e.g. run `youtube-dl https://youtube.com/somevideo` in the folder where the youtube-dl executable is,
 after download is finished check that the quality is good. If quality is bad, it's probably unable
 to call ffmpeg)
-3. Download the build files of this tool (a `.zip` which contains a `.jar` and a `.bat`)
+3. Download the [build files of this tool](https://github.com/baobabKoodaa/one-click-youtube-dl/releases)
+(a `.zip` which contains a `.jar` and a `.bat`)
 4. Place the youtube-dl executable and the build files of this tool into the folder where you want
 to download youtube videos
 
