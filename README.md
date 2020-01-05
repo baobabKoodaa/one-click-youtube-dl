@@ -41,3 +41,12 @@ where youtube-dl-gui was unable to download any videos, and instead of showing s
 it was showing in the GUI was "finished" (as in, the download 'finished' successfully, when in fact it failed
 to download anything at all). In contrast to youtube-dl-gui, this tool simply opens youtube-dl in a command
 prompt and keeps the window open so you can see all the output that youtube-dl gives.
+
+**Why Java, couldn't this be a simple bash script?**
+
+Sure, why not. I just don't have experience writing Windows bash scripts and I don't know how to do URL validation
+with bash. If you just had a simple bash script to run youtube-dl without URL validation, you would run the risk of running arbitrary
+bash commands from clipboard (if you accidentally had something in clipboard that you shouldn't have) -- so URL validation is important. It only took a few seconds to write rudimentary URL
+validation with Java, so I minimized my own time by writing this in a language that's familiar to me. The downside of this choice is
+that users need Java to run this, but then again, the type of people who are likely to use this are developers
+who already have Java on their machine, so it's not really an issue.
