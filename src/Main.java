@@ -9,7 +9,7 @@ public class Main {
             String clipboardData = (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
             String url = clipboardData;
             if (url.startsWith("https://") && !url.contains("\n")) {
-                launchYoutubeDL(url);
+                launchYoutubeDL(url, args);
             } else {
                 System.out.println("Clipboard does not contain a valid URL: " + url);
             }
@@ -20,11 +20,11 @@ public class Main {
         }
     }
 
-    public static void launchYoutubeDL(String url) throws IOException {
+    public static void launchYoutubeDL(String url, String[] args) throws IOException {
         Runtime.getRuntime().exec(new String[]
                 {
                         "cmd","/k","start",
-                        "cmd","/k","youtube-dl.exe",url
+                        "cmd","/k","youtube-dl.exe " + url + " " + String.join(" ", args)
                 }
         );
     }
