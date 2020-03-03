@@ -18,12 +18,29 @@ to call ffmpeg)
 4. Place the youtube-dl executable and the build files of this tool into the folder where you want
 to download youtube videos
 
-**Usage:**
+**Typical usage:**
 
 1. Copy the URL of the video you want to download to clipboard (CTRL+C).
 2. Run `one-click-youtube-dl.bat`
 
 That's it! youtube-dl is now downloading the video from the URL in the clipboard.
+
+**Advanced users**
+
+You can now pass arguments to youtube-dl! (Works in version 2020-03-03 and newer.)
+Simply open the `one-click-youtube-dl.bat` file with a text editor and add parameters to the end of the line.
+
+For example, if I want to output really small files, I might add parameter `-f worst`, so the `.bat` file in
+this case would contain the following line:
+
+`java -jar one-click-youtube-dl.jar -f worst`
+
+A complete list of arguments is available in the [youtube-dl README](https://github.com/ytdl-org/youtube-dl/blob/master/README.md).
+
+Note that if your arguments use plain percent characters (`%`), you have to escape them by doubling,
+so that `-o "%(title)s-%(id)s.%(ext)s"` should become `-o "%%(title)s-%%(id)s.%%(ext)s"`.
+However you should not touch `%`'s that are not plain characters, e.g. environment variables
+for expansion should stay intact: `-o "C:\%HOMEPATH%\Desktop\%%(title)s.%%(ext)s"`.
 
 **Why does this exist?**
 
