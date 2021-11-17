@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
 
@@ -20,11 +22,31 @@ public class Main {
         }
     }
 
+    public static String getPromptFlag(String[] args) {
+        for (String arg : args) {
+            if (arg.equals("--closeprompt")) {
+                return "/c";
+            }
+        }
+        return "/k";
+    }
+
+    public static String[] withoutPromptFlag(String[] args) {
+        ArrayList<String> filteredArgs = new ArrayList<>();
+        for (String arg : args) {
+            if (!arg.equals("--closeprompt")) {
+                filteredArgs.add(arg);
+            }
+        }
+        return filteredArgs.toArray(new String[0]);
+    }
+
     public static void launchYoutubeDL(String url, String[] args) throws IOException {
+        String k = getPromptFlag(args);
         Runtime.getRuntime().exec(new String[]
                 {
-                        "cmd","/k","start",
-                        "cmd","/k","youtube-dl.exe " + url + " " + String.join(" ", args)
+                        "cmd", k, "start",
+                        "cmd", k, "youtube-dl.exe " + url + " " + String.join(" ", withoutPromptFlag(args))
                 }
         );
     }
