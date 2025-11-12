@@ -5,9 +5,10 @@ This is a small tool that provides a "one click download" functionality to youtu
 1. Java: Download [Java JDK](https://jdk.java.net/), add it to environment path variable
 2. ffmpeg: Download [ffmpeg Windows build](https://www.ffmpeg.org/download.html#build-windows),
 add it to environment path variable
-3. youtube-dl: Download [youtube-dl Windows executable](https://ytdl-org.github.io/youtube-dl/download.html).
+3. [Install a JavaScript runtime](https://github.com/yt-dlp/yt-dlp/issues/15012) to your global environment..
+4. yt-dlp: Download [yt-dlp Windows executable](https://ytdl-org.github.io/youtube-dl/download.html](https://github.com/yt-dlp/yt-dlp/releases/latest).
 Test that you are able to download high-quality videos from youtube on command line
-(e.g. run `youtube-dl https://youtube.com/somevideo` in the folder where the youtube-dl executable is,
+(e.g. run `yt-dlp https://youtube.com/somevideo` in the folder where the youtube-dl executable is,
 after the download is finished check that the quality is good. If the quality is bad, you probably
 have an issue with ffmpeg.)
 
@@ -15,7 +16,8 @@ have an issue with ffmpeg.)
 
 1. Download the [latest release](https://github.com/baobabKoodaa/one-click-youtube-dl/releases)
 (a `.zip` which contains a `.jar` and a `.bat`)
-2. Place the `.jar`, `.bat`, and `youtube-dl.exe` into a folder which will be your default download folder.
+2. Place the `.jar`, `.bat`, and `yt-dlp.exe` into a folder which will be your default download folder.
+3. Rename `yt-dlp.exe` to `youtube-dl.exe` (legacy reasons)
 
 **Typical usage**
 
